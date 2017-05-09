@@ -1,0 +1,51 @@
+{
+  "name": "hetemel",
+  "version": "0.0.0",
+  "description": "A HTML parser to make AST which fits for linting.",
+  "engines": {
+    "node": ">=4"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/node": "^4.2.6",
+    "codecov": "^2.1.0",
+    "eslint": "^3.19.0",
+    "eslint-config-mysticatea": "^10.0.0",
+    "mocha": "^3.3.0",
+    "nyc": "^10.3.2",
+    "opener": "^1.4.3",
+    "rimraf": "^2.6.1"
+  },
+  "scripts": {
+    "_mocha": "_mocha \"test/**/*.js\" --reporter progress",
+    "clean": "rimraf .nyc_output coverage",
+    "coverage": "nyc report --reporter lcov && opener ./coverage/lcov-report/index.html",
+    "lint": "eslint lib test",
+    "postversion": "git push && git push --tags",
+    "pretest": "npm run lint",
+    "preversion": "npm test",
+    "test": "nyc npm run _mocha",
+    "watch": "npm run _mocha -- --growl --watch",
+    "codecov": "nyc report --reporter lcovonly && codecov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mysticatea/hetemel.git"
+  },
+  "keywords": [
+    "HTML",
+    "parser",
+    "AST"
+  ],
+  "author": "Toru Nagashima (https://github.com/mysticatea)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mysticatea/hetemel/issues"
+  },
+  "homepage": "https://github.com/mysticatea/hetemel#readme"
+}
