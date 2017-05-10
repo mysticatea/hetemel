@@ -1,0 +1,3 @@
+[submodule "lib/parse5"]
+	path = lib/parse5
+	url = https://github.com/inikulin/parse5.git
